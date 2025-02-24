@@ -52,6 +52,7 @@ async function sendMessage(req, res) {
 			img: img || "",
 		});
 
+		// Save the new message and update the lastMessage in the conversation
 		await Promise.all([
 			newMessage.save(),
 			conversation.updateOne({
