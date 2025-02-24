@@ -10,6 +10,8 @@ async function sendMessage(req, res) {
 	try {
 		// Get the recipientId, message, and img from the request body
 		const { recipientId, message } = req.body;
+
+		// Get the img from the request user object
 		let { img } = req.body;
 		const senderId = req.user._id;
 
