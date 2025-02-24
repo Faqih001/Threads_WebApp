@@ -39,6 +39,8 @@ async function sendMessage(req, res) {
 		if (img) {
 			// Upload the img to Cloudinary
 			const uploadedResponse = await cloudinary.uploader.upload(img);
+
+			// Get the img URL from the uploadedResponse
 			img = uploadedResponse.secure_url;
 		}
 
