@@ -80,6 +80,7 @@ async function sendMessage(req, res) {
 
 // Get Messages API endpoint (get all messages in a conversation) by conversationId API endpoint
 async function getMessages(req, res) {
+	// Other user id from the request params and user id from the request user object
 	const { otherUserId } = req.params;
 	const userId = req.user._id;
 	try {
