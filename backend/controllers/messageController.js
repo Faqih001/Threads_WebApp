@@ -6,6 +6,7 @@ import Actions from '../../frontend/src/components/Actions';
 
 // Send Message to a user or group of users API endpoint (create a new conversation if it doesn't exist)
 async function sendMessage(req, res) {
+	// Try
 	try {
 		const { recipientId, message } = req.body;
 		let { img } = req.body;
