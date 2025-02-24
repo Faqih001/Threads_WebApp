@@ -71,6 +71,7 @@ async function sendMessage(req, res) {
 			io.to(recipientSocketId).emit("newMessage", newMessage);
 		}
 
+		// Return the new message
 		res.status(201).json(newMessage);
 	} catch (error) {
 		res.status(500).json({ error: error.message });
