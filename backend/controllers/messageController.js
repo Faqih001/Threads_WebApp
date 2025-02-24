@@ -35,6 +35,7 @@ async function sendMessage(req, res) {
 			await conversation.save();
 		}
 
+		// If the img exists, upload the img to Cloudinary and get the img URL
 		if (img) {
 			const uploadedResponse = await cloudinary.uploader.upload(img);
 			img = uploadedResponse.secure_url;
