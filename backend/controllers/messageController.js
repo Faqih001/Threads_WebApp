@@ -13,6 +13,8 @@ async function sendMessage(req, res) {
 
 		// Get the img from the request user object
 		let { img } = req.body;
+
+		// Get the senderId from the request user object
 		const senderId = req.user._id;
 
 		let conversation = await Conversation.findOne({
