@@ -44,6 +44,7 @@ async function sendMessage(req, res) {
 			img = uploadedResponse.secure_url;
 		}
 
+		// Create a new message with the conversationId, senderId, message, and img
 		const newMessage = new Message({
 			conversationId: conversation._id,
 			sender: senderId,
