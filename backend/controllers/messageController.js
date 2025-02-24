@@ -24,6 +24,7 @@ async function sendMessage(req, res) {
 
 		// If the conversation doesn't exist, create a new conversation with the senderId and recipientId
 		if (!conversation) {
+			// Create a new conversation
 			conversation = new Conversation({
 				participants: [senderId, recipientId],
 				lastMessage: {
