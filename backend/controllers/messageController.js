@@ -17,6 +17,7 @@ async function sendMessage(req, res) {
 		// Get the senderId from the request user object
 		const senderId = req.user._id;
 
+		// Find a conversation that has the senderId and recipientId in the participants array
 		let conversation = await Conversation.findOne({
 			participants: { $all: [senderId, recipientId] },
 		});
