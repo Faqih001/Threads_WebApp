@@ -8,6 +8,7 @@ import Actions from '../../frontend/src/components/Actions';
 async function sendMessage(req, res) {
 	// Try to send a message to a user or group of users and create a new conversation if it doesn't exist
 	try {
+		// Get the recipientId, message, and img from the request body
 		const { recipientId, message } = req.body;
 		let { img } = req.body;
 		const senderId = req.user._id;
