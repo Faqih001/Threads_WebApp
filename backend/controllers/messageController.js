@@ -91,10 +91,12 @@ async function getMessages(req, res) {
 			participants: { $all: [userId, otherUserId] },
 		});
 
+		// If the conversation doesn't exist, return a 404 error
 		if (!conversation) {
 			return res.status(404).json({ error: "Conversation not found" });
 		}
 
+		//
 		const messages = await Message.find({
 			conversationId: conversation._id,
 		}).sort({ createdAt: 1 });
