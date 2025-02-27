@@ -86,6 +86,7 @@ async function getMessages(req, res) {
 
 	// Try to get all messages in a conversation by conversationId and sort by createdAt
 	try {
+		// Conversation that has the userId and otherUserId in the participants array
 		const conversation = await Conversation.findOne({
 			participants: { $all: [userId, otherUserId] },
 		});
