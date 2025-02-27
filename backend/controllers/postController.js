@@ -10,6 +10,7 @@ const createPost = async (req, res) => {
 		const { postedBy, text } = req.body;
 		let { img } = req.body;
 
+		// If the postedBy or text doesn't exist, return an error response
 		if (!postedBy || !text) {
 			return res.status(400).json({ error: "Postedby and text fields are required" });
 		}
