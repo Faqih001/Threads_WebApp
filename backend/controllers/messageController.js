@@ -96,7 +96,7 @@ async function getMessages(req, res) {
 			return res.status(404).json({ error: "Conversation not found" });
 		}
 
-		//
+		// Messages in the conversation sorted by createdAt
 		const messages = await Message.find({
 			conversationId: conversation._id,
 		}).sort({ createdAt: 1 });
