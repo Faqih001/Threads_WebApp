@@ -101,6 +101,7 @@ async function getMessages(req, res) {
 			conversationId: conversation._id,
 		}).sort({ createdAt: 1 });
 
+		// Return the messages in the conversation
 		res.status(200).json(messages);
 	} catch (error) {
 		res.status(500).json({ error: error.message });
