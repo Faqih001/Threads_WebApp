@@ -110,6 +110,7 @@ async function getMessages(req, res) {
 
 // Get Conversations API endpoint (get all conversations of a user) by userId API endpoint
 async function getConversations(req, res) {
+	// User id from the request user object
 	const userId = req.user._id;
 	try {
 		const conversations = await Conversation.find({ participants: userId }).populate({
