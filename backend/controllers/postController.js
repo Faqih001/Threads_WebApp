@@ -4,7 +4,9 @@ import { v2 as cloudinary } from "cloudinary";
 
 // Create a new post API endpoint (create a new post) 
 const createPost = async (req, res) => {
+	// Try to create a new post with the postedBy, text, and img from the request body
 	try {
+		//
 		const { postedBy, text } = req.body;
 		let { img } = req.body;
 
