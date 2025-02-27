@@ -115,6 +115,7 @@ async function getConversations(req, res) {
 
 	// Try to get all conversations of a user by userId and populate the participants array
 	try {
+		// Conversations that have the userId in the participants array
 		const conversations = await Conversation.find({ participants: userId }).populate({
 			path: "participants",
 			select: "username profilePic",
