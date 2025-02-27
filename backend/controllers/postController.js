@@ -17,6 +17,8 @@ const createPost = async (req, res) => {
 
 		// Find the user that has the postedBy id from the request body
 		const user = await User.findById(postedBy);
+
+		// If the user doesn't exist, return an error response
 		if (!user) {
 			return res.status(404).json({ error: "User not found" });
 		}
