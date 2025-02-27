@@ -6,7 +6,7 @@ import { v2 as cloudinary } from "cloudinary";
 const createPost = async (req, res) => {
 	// Try to create a new post with the postedBy, text, and img from the request body
 	try {
-		//
+		// Get the postedBy, text, and img from the request body
 		const { postedBy, text } = req.body;
 		let { img } = req.body;
 
