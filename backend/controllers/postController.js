@@ -28,11 +28,13 @@ const createPost = async (req, res) => {
 			return res.status(401).json({ error: "Unauthorized to create post" });
 		}
 
+		// If the text length is greater than 500 characters, return an error response
 		const maxLength = 500;
 		if (text.length > maxLength) {
 			return res.status(400).json({ error: `Text must be less than ${maxLength} characters` });
 		}
 
+		
 		if (img) {
 			const uploadedResponse = await cloudinary.uploader.upload(img);
 			img = uploadedResponse.secure_url;
