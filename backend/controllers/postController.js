@@ -40,7 +40,10 @@ const createPost = async (req, res) => {
 			img = uploadedResponse.secure_url;
 		}
 
+		// Create a new post with the postedBy, text, and img
 		const newPost = new Post({ postedBy, text, img });
+
+		//
 		await newPost.save();
 
 		res.status(201).json(newPost);
