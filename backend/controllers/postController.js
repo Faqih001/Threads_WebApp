@@ -43,7 +43,7 @@ const createPost = async (req, res) => {
 		// Create a new post with the postedBy, text, and img
 		const newPost = new Post({ postedBy, text, img });
 
-		//
+		// Save the new post
 		await newPost.save();
 
 		res.status(201).json(newPost);
