@@ -53,6 +53,7 @@ const createPost = async (req, res) => {
 	}
 };
 
+// Get a post API endpoint (get a post by id)
 const getPost = async (req, res) => {
 	try {
 		const post = await Post.findById(req.params.id);
