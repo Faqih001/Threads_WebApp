@@ -34,7 +34,7 @@ const createPost = async (req, res) => {
 			return res.status(400).json({ error: `Text must be less than ${maxLength} characters` });
 		}
 
-		
+		// If the img exists, upload the img to Cloudinary and get the img URL
 		if (img) {
 			const uploadedResponse = await cloudinary.uploader.upload(img);
 			img = uploadedResponse.secure_url;
