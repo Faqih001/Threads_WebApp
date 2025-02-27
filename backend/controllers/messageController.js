@@ -112,6 +112,8 @@ async function getMessages(req, res) {
 async function getConversations(req, res) {
 	// User id from the request user object
 	const userId = req.user._id;
+
+	// Try to get all conversations of a user by userId and populate the participants array
 	try {
 		const conversations = await Conversation.find({ participants: userId }).populate({
 			path: "participants",
