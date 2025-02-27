@@ -15,6 +15,7 @@ const createPost = async (req, res) => {
 			return res.status(400).json({ error: "Postedby and text fields are required" });
 		}
 
+		// Find the user that has the postedBy id from the request body
 		const user = await User.findById(postedBy);
 		if (!user) {
 			return res.status(404).json({ error: "User not found" });
