@@ -142,12 +142,14 @@ const likeUnlikePost = async (req, res) => {
 const replyToPost = async (req, res) => {
 	// Try to reply to a post by id from the request params
 	try {
+		// Get the text, post id, user id, user profile pic, and username from the request body
 		const { text } = req.body;
 		const postId = req.params.id;
 		const userId = req.user._id;
 		const userProfilePic = req.user.profilePic;
 		const username = req.user.username;
 
+		// If the text doesn't exist, return an error response
 		if (!text) {
 			return res.status(400).json({ error: "Text field is required" });
 		}
