@@ -140,6 +140,7 @@ const likeUnlikePost = async (req, res) => {
 
 // Reply to a post API endpoint (reply to a post by id) 
 const replyToPost = async (req, res) => {
+	// Try to reply to a post by id from the request params
 	try {
 		const { text } = req.body;
 		const postId = req.params.id;
