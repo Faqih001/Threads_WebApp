@@ -82,6 +82,7 @@ const deletePost = async (req, res) => {
 			return res.status(404).json({ error: "Post not found" });
 		}
 
+		// If the postedBy id from the post object doesn't match the user id from the request user object, return an error response
 		if (post.postedBy.toString() !== req.user._id.toString()) {
 			return res.status(401).json({ error: "Unauthorized to delete post" });
 		}
