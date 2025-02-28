@@ -119,8 +119,10 @@ const likeUnlikePost = async (req, res) => {
 			return res.status(404).json({ error: "Post not found" });
 		}
 
+		// Check if the user id from the request user object is in the likes array
 		const userLikedPost = post.likes.includes(userId);
 
+		//
 		if (userLikedPost) {
 			// Unlike post
 			await Post.updateOne({ _id: postId }, { $pull: { likes: userId } });
