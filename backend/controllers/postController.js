@@ -154,6 +154,7 @@ const replyToPost = async (req, res) => {
 			return res.status(400).json({ error: "Text field is required" });
 		}
 
+		// Find the post by id from the request params
 		const post = await Post.findById(postId);
 		if (!post) {
 			return res.status(404).json({ error: "Post not found" });
