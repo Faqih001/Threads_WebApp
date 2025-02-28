@@ -121,8 +121,8 @@ const likeUnlikePost = async (req, res) => {
 
 		// Check if the user id from the request user object is in the likes array
 		const userLikedPost = post.likes.includes(userId);
-
-		//
+ 
+		// If the user id from the request user object is in the likes array, unlike the post
 		if (userLikedPost) {
 			// Unlike post
 			await Post.updateOne({ _id: postId }, { $pull: { likes: userId } });
@@ -138,6 +138,7 @@ const likeUnlikePost = async (req, res) => {
 	}
 };
 
+//
 const replyToPost = async (req, res) => {
 	try {
 		const { text } = req.body;
