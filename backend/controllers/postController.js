@@ -103,6 +103,7 @@ const deletePost = async (req, res) => {
 	}
 };
 
+// Like or unlike a post API endpoint (like or unlike a post by id)
 const likeUnlikePost = async (req, res) => {
 	try {
 		const { id: postId } = req.params;
