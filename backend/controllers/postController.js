@@ -107,9 +107,11 @@ const deletePost = async (req, res) => {
 const likeUnlikePost = async (req, res) => {
 	// Try to like or unlike a post by id from the request params
 	try {
+		// Get the post id from the request params and the user id from the request user object
 		const { id: postId } = req.params;
 		const userId = req.user._id;
 
+		//
 		const post = await Post.findById(postId);
 
 		if (!post) {
