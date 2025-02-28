@@ -74,6 +74,7 @@ const getPost = async (req, res) => {
 
 // Delete a post API endpoint (delete a post by id)
 const deletePost = async (req, res) => {
+	// Try to delete a post by id from the request params
 	try {
 		const post = await Post.findById(req.params.id);
 		if (!post) {
