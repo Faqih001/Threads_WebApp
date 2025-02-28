@@ -114,7 +114,7 @@ const likeUnlikePost = async (req, res) => {
 		// Find the post by id from the request params and check if the user id from the request user object is in the likes array
 		const post = await Post.findById(postId);
 
-		/
+		// If the post doesn't exist, return an error response
 		if (!post) {
 			return res.status(404).json({ error: "Post not found" });
 		}
