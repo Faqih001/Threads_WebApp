@@ -60,6 +60,7 @@ const getPost = async (req, res) => {
 		// Find the post by id from the request params
 		const post = await Post.findById(req.params.id);
 
+		// If the post doesn't exist, return an error response
 		if (!post) {
 			return res.status(404).json({ error: "Post not found" });
 		}
