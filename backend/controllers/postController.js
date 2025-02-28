@@ -76,6 +76,7 @@ const getPost = async (req, res) => {
 const deletePost = async (req, res) => {
 	// Try to delete a post by id from the request params
 	try {
+		// Find the post by id from the request params
 		const post = await Post.findById(req.params.id);
 		if (!post) {
 			return res.status(404).json({ error: "Post not found" });
