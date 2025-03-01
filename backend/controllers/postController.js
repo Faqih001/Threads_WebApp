@@ -163,6 +163,7 @@ const replyToPost = async (req, res) => {
 		// Create a new reply with the user id, text, user profile pic, and username
 		const reply = { userId, text, userProfilePic, username };
 
+		// Add the reply to the replies array in the post
 		post.replies.push(reply);
 		await post.save();
 
