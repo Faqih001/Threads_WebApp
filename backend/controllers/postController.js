@@ -160,6 +160,7 @@ const replyToPost = async (req, res) => {
 			return res.status(404).json({ error: "Post not found" });
 		}
 
+		// Create a new reply with the user id, text, user profile pic, and username
 		const reply = { userId, text, userProfilePic, username };
 
 		post.replies.push(reply);
