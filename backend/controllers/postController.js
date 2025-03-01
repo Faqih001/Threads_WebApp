@@ -174,7 +174,9 @@ const replyToPost = async (req, res) => {
 	}
 };
 
+// Get feed posts API endpoint (get all posts from users that the current user is following)
 const getFeedPosts = async (req, res) => {
+	//
 	try {
 		const userId = req.user._id;
 		const user = await User.findById(userId);
