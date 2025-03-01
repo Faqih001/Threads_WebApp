@@ -182,7 +182,7 @@ const getFeedPosts = async (req, res) => {
 		const userId = req.user._id;
 		const user = await User.findById(userId);
 		
-		//
+		// If the user doesn't exist, return an error response
 		if (!user) {
 			return res.status(404).json({ error: "User not found" });
 		}
