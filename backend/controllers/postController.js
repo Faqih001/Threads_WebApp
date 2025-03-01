@@ -207,7 +207,10 @@ const getUserPosts = async (req, res) => {
 
 	// Try to get all posts from a user by username
 	try {
+		// Find the user by username
 		const user = await User.findOne({ username });
+
+		//
 		if (!user) {
 			return res.status(404).json({ error: "User not found" });
 		}
