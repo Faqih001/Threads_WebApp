@@ -204,6 +204,8 @@ const getFeedPosts = async (req, res) => {
 const getUserPosts = async (req, res) => {
 	// User username from the request params
 	const { username } = req.params;
+
+	// Try to get all posts from a user by username
 	try {
 		const user = await User.findOne({ username });
 		if (!user) {
