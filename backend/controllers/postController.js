@@ -193,6 +193,7 @@ const getFeedPosts = async (req, res) => {
 		// Find all posts from users in the following array and sort by createdAt
 		const feedPosts = await Post.find({ postedBy: { $in: following } }).sort({ createdAt: -1 });
 
+		// Return the feed posts
 		res.status(200).json(feedPosts);
 	} catch (err) {
 		res.status(500).json({ error: err.message });
