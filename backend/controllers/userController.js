@@ -11,6 +11,7 @@ const getUserProfile = async (req, res) => {
 	// query is either username or userId
 	const { query } = req.params;
 
+	// Try to find user by userId or username and exclude password and updatedAt fields
 	try {
 		let user;
 
