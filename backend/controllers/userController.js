@@ -5,6 +5,7 @@ import generateTokenAndSetCookie from "../utils/helpers/generateTokenAndSetCooki
 import { v2 as cloudinary } from "cloudinary";
 import mongoose from "mongoose";
 
+// Get user profile by username or userId (public route)
 const getUserProfile = async (req, res) => {
 	// We will fetch user profile either with username or userId
 	// query is either username or userId
