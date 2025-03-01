@@ -200,6 +200,7 @@ const getFeedPosts = async (req, res) => {
 	}
 };
 
+// Get user posts API endpoint (get all posts from a user by username)
 const getUserPosts = async (req, res) => {
 	const { username } = req.params;
 	try {
