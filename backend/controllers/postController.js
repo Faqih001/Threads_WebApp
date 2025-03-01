@@ -215,7 +215,7 @@ const getUserPosts = async (req, res) => {
 			return res.status(404).json({ error: "User not found" });
 		}
 
-		//
+		// Find all posts from the user and sort by createdAt
 		const posts = await Post.find({ postedBy: user._id }).sort({ createdAt: -1 });
 
 		res.status(200).json(posts);
