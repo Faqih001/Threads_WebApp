@@ -89,7 +89,10 @@ const signupUser = async (req, res) => {
 const loginUser = async (req, res) => {
 	// Try to find user by username and compare password
 	try {
+		// Destructure username and password from request body
 		const { username, password } = req.body;
+
+		//
 		const user = await User.findOne({ username });
 		const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
 
