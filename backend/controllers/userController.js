@@ -110,6 +110,7 @@ const loginUser = async (req, res) => {
 		// If user found and password is correct, generate token and set cookie and return user profile
 		generateTokenAndSetCookie(user._id, res);
 
+		// Return user profile
 		res.status(200).json({
 			_id: user._id,
 			name: user.name,
