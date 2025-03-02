@@ -41,7 +41,7 @@ const signupUser = async (req, res) => {
 		// Destructure name, email, username, password from request body
 		const { name, email, username, password } = req.body;
 
-		//
+		// UFind user by email or username in database
 		const user = await User.findOne({ $or: [{ email }, { username }] });
 
 		if (user) {
