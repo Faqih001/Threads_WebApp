@@ -129,9 +129,11 @@ const loginUser = async (req, res) => {
 const logoutUser = (req, res) => {
 	// try to clear cookie with jwt token
 	try {
+		// Clear cookie with jwt token and return success message
 		res.cookie("jwt", "", { maxAge: 1 });
 		res.status(200).json({ message: "User logged out successfully" });
 	} catch (err) {
+		// If error, return error message
 		res.status(500).json({ error: err.message });
 		console.log("Error in signupUser: ", err.message);
 	}
