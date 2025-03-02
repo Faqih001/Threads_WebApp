@@ -34,6 +34,7 @@ const getUserProfile = async (req, res) => {
 	}
 };
 
+// Sign up user (public route) - create new user in database
 const signupUser = async (req, res) => {
 	try {
 		const { name, email, username, password } = req.body;
