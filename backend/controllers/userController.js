@@ -101,12 +101,13 @@ const loginUser = async (req, res) => {
 		// If user not found or password is incorrect, return error
 		if (!user || !isPasswordCorrect) return res.status(400).json({ error: "Invalid username or password" });
 
-		// 
+		// If user is frozen, unfreeze the account
 		if (user.isFrozen) {
 			user.isFrozen = false;
 			await user.save();
 		}
 
+		// If user found and password is correct, generate token and set cookie and return user profile
 		generateTokenAndSetCookie(user._id, res);
 
 		res.status(200).json({
