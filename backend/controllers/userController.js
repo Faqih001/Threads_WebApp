@@ -125,6 +125,7 @@ const loginUser = async (req, res) => {
 	}
 };
 
+// Logout user (protected route) - clear cookie with jwt token
 const logoutUser = (req, res) => {
 	try {
 		res.cookie("jwt", "", { maxAge: 1 });
