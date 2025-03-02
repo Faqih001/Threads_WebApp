@@ -64,6 +64,7 @@ const signupUser = async (req, res) => {
 
 		// If user created successfully, generate token and set cookie and return user profile
 		if (newUser) {
+			// Generate token and set cookie
 			generateTokenAndSetCookie(newUser._id, res);
 
 			res.status(201).json({
