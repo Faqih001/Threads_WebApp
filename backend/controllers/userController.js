@@ -85,8 +85,9 @@ const signupUser = async (req, res) => {
 	}
 };
 
-//
+// Login user (public route) - find user by username and compare password
 const loginUser = async (req, res) => {
+	// T
 	try {
 		const { username, password } = req.body;
 		const user = await User.findOne({ username });
