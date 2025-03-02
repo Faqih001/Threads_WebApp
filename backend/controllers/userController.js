@@ -141,6 +141,7 @@ const logoutUser = (req, res) => {
 
 // Follow or unfollow user (protected route) - follow or unfollow user by id
 const followUnFollowUser = async (req, res) => {
+	// Try to follow or unfollow user by id
 	try {
 		const { id } = req.params;
 		const userToModify = await User.findById(id);
