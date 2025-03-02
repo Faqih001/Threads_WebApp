@@ -92,8 +92,10 @@ const loginUser = async (req, res) => {
 		// Destructure username and password from request body
 		const { username, password } = req.body;
 
-		//
+		// Find user by username in database
 		const user = await User.findOne({ username });
+
+		// isPasswordCorrect is true if password is correct
 		const isPasswordCorrect = await bcrypt.compare(password, user?.password || "");
 
 		if (!user || !isPasswordCorrect) return res.status(400).json({ error: "Invalid username or password" });
