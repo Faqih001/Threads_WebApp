@@ -67,6 +67,7 @@ const signupUser = async (req, res) => {
 			// Generate token and set cookie
 			generateTokenAndSetCookie(newUser._id, res);
 
+			// Return user profile
 			res.status(201).json({
 				_id: newUser._id,
 				name: newUser.name,
@@ -84,6 +85,7 @@ const signupUser = async (req, res) => {
 	}
 };
 
+//
 const loginUser = async (req, res) => {
 	try {
 		const { username, password } = req.body;
