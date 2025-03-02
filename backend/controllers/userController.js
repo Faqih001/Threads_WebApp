@@ -36,6 +36,7 @@ const getUserProfile = async (req, res) => {
 
 // Sign up user (public route) - create new user in database
 const signupUser = async (req, res) => {
+	// Try to find user by email or username
 	try {
 		const { name, email, username, password } = req.body;
 		const user = await User.findOne({ $or: [{ email }, { username }] });
