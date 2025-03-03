@@ -208,6 +208,7 @@ const updateUser = async (req, res) => {
 			user.password = hashedPassword;
 		}
 
+		// If profile pic is provided, upload profile pic to cloudinary and update user profile pic
 		if (profilePic) {
 			if (user.profilePic) {
 				await cloudinary.uploader.destroy(user.profilePic.split("/").pop().split(".")[0]);
