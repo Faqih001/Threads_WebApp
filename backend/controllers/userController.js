@@ -193,6 +193,8 @@ const updateUser = async (req, res) => {
 	try {
 		// Find user by id in database
 		let user = await User.findById(userId);
+
+		// If user not found, return error message "User not found"
 		if (!user) return res.status(400).json({ error: "User not found" });
 
 		if (req.params.id !== userId.toString())
