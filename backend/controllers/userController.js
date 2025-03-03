@@ -143,6 +143,7 @@ const logoutUser = (req, res) => {
 const followUnFollowUser = async (req, res) => {
 	// Try to follow or unfollow user by id
 	try {
+		// Id is user id to follow or unfollow
 		const { id } = req.params;
 		const userToModify = await User.findById(id);
 		const currentUser = await User.findById(req.user._id);
