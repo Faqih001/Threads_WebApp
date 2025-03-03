@@ -160,6 +160,7 @@ const followUnFollowUser = async (req, res) => {
 		// If user is already following, unfollow user
 		const isFollowing = currentUser.following.includes(id);
 
+		// If user is following, unfollow user, else follow user
 		if (isFollowing) {
 			// Unfollow user
 			await User.findByIdAndUpdate(id, { $pull: { followers: req.user._id } });
