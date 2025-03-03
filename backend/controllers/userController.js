@@ -274,6 +274,8 @@ const getSuggestedUsers = async (req, res) => {
 
 		// Filter users that current user is already following
 		const filteredUsers = users.filter((user) => !usersFollowedByYou.following.includes(user._id));
+
+		// Return first 4 users as suggested users
 		const suggestedUsers = filteredUsers.slice(0, 4);
 
 		suggestedUsers.forEach((user) => (user.password = null));
