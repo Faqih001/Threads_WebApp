@@ -257,6 +257,7 @@ const getSuggestedUsers = async (req, res) => {
 		// exclude the current user from suggested users array and exclude users that current user is already following
 		const userId = req.user._id;
 
+		// Find users followed by current user
 		const usersFollowedByYou = await User.findById(userId).select("following");
 
 		const users = await User.aggregate([
