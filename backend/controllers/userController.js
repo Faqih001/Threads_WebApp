@@ -178,6 +178,7 @@ const followUnFollowUser = async (req, res) => {
 	}
 };
 
+// Update user profile (protected route) - update user profile by id
 const updateUser = async (req, res) => {
 	const { name, email, username, password, bio } = req.body;
 	let { profilePic } = req.body;
