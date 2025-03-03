@@ -251,6 +251,7 @@ const updateUser = async (req, res) => {
 	}
 };
 
+// Get suggested users (protected route) - get suggested users for current user
 const getSuggestedUsers = async (req, res) => {
 	try {
 		// exclude the current user from suggested users array and exclude users that current user is already following
