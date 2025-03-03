@@ -197,6 +197,7 @@ const updateUser = async (req, res) => {
 		// If user not found, return error message "User not found"
 		if (!user) return res.status(400).json({ error: "User not found" });
 
+		// If user id in request params is not equal to user id in database, return error message "You cannot update other user's profile"
 		if (req.params.id !== userId.toString())
 			return res.status(400).json({ error: "You cannot update other user's profile" });
 
