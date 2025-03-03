@@ -219,6 +219,7 @@ const updateUser = async (req, res) => {
 			profilePic = uploadedResponse.secure_url;
 		}
 
+		// Update user name, email, username, profilePic, bio
 		user.name = name || user.name;
 		user.email = email || user.email;
 		user.username = username || user.username;
