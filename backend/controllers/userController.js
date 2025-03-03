@@ -260,6 +260,7 @@ const getSuggestedUsers = async (req, res) => {
 		// Find users followed by current user
 		const usersFollowedByYou = await User.findById(userId).select("following");
 
+		// Find 10 random users and exclude current user and users followed by current user
 		const users = await User.aggregate([
 			{
 				$match: {
