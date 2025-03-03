@@ -226,6 +226,7 @@ const updateUser = async (req, res) => {
 		user.profilePic = profilePic || user.profilePic;
 		user.bio = bio || user.bio;
 
+		// Save user in database
 		user = await user.save();
 
 		// Find all posts that this user replied and update username and userProfilePic fields
