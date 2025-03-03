@@ -271,6 +271,8 @@ const getSuggestedUsers = async (req, res) => {
 				$sample: { size: 10 },
 			},
 		]);
+
+		// Filter users that current user is already following
 		const filteredUsers = users.filter((user) => !usersFollowedByYou.following.includes(user._id));
 		const suggestedUsers = filteredUsers.slice(0, 4);
 
