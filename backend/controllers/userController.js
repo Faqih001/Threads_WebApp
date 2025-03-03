@@ -186,6 +186,7 @@ const updateUser = async (req, res) => {
 	// Profile pic from request body
 	let { profilePic } = req.body;
 
+	// User id from request params
 	const userId = req.user._id;
 	try {
 		let user = await User.findById(userId);
