@@ -157,6 +157,7 @@ const followUnFollowUser = async (req, res) => {
 		// If user is not found, return error message "User not found"
 		if (!userToModify || !currentUser) return res.status(400).json({ error: "User not found" });
 
+		// If user is already following, unfollow user
 		const isFollowing = currentUser.following.includes(id);
 
 		if (isFollowing) {
