@@ -281,7 +281,7 @@ const getSuggestedUsers = async (req, res) => {
 		// Suggested users password should be null in response object array
 		suggestedUsers.forEach((user) => (user.password = null));
 
-		//
+		// Return suggested users in response object array
 		res.status(200).json(suggestedUsers);
 	} catch (error) {
 		res.status(500).json({ error: error.message });
