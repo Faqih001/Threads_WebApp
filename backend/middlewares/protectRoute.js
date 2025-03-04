@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 const protectRoute = async (req, res, next) => {
 	// Try to verify the token and get the user
 	try {
+		// Get the token from the cookies
 		const token = req.cookies.jwt;
 
 		if (!token) return res.status(401).json({ message: "Unauthorized" });
