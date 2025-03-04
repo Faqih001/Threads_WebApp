@@ -292,6 +292,7 @@ const getSuggestedUsers = async (req, res) => {
 const freezeAccount = async (req, res) => {
 	// Try to freeze account of current user
 	try {
+		// Find user by id in database and set isFrozen to true
 		const user = await User.findById(req.user._id);
 		if (!user) {
 			return res.status(400).json({ error: "User not found" });
