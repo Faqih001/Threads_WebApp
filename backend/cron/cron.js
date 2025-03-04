@@ -4,6 +4,7 @@ import https from "https";
 // URL of the server to send GET request
 const URL = "https://threads-clone-9if3.onrender.com";
 
+// Create a new cron job that runs every 14 minutes
 const job = new cron.CronJob("*/14 * * * *", function () {
 	https
 		.get(URL, (res) => {
