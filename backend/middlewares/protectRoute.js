@@ -14,6 +14,7 @@ const protectRoute = async (req, res, next) => {
 		// Verify the token using the JWT_SECRET from the .env file
 		const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
+		// Find the user by the id from the decoded token
 		const user = await User.findById(decoded.userId).select("-password");
 
 		req.user = user;
