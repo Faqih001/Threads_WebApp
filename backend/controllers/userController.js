@@ -278,8 +278,10 @@ const getSuggestedUsers = async (req, res) => {
 		// Return first 4 users as suggested users
 		const suggestedUsers = filteredUsers.slice(0, 4);
 
+		// Suggested users password should be null in response object array
 		suggestedUsers.forEach((user) => (user.password = null));
 
+		//
 		res.status(200).json(suggestedUsers);
 	} catch (error) {
 		res.status(500).json({ error: error.message });
