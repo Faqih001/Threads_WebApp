@@ -11,6 +11,7 @@ const protectRoute = async (req, res, next) => {
 		// If there is no token, return an error
 		if (!token) return res.status(401).json({ message: "Unauthorized" });
 
+		// Verify the token using the JWT_SECRET from the .env file
 		const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
 		const user = await User.findById(decoded.userId).select("-password");
