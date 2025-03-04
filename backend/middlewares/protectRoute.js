@@ -20,6 +20,7 @@ const protectRoute = async (req, res, next) => {
 		// Request user is the user from the database
 		req.user = user;
 
+		// Call the next middleware
 		next();
 	} catch (err) {
 		res.status(500).json({ message: err.message });
