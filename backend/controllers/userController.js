@@ -288,6 +288,7 @@ const getSuggestedUsers = async (req, res) => {
 	}
 };
 
+// Freeze account (protected route) - freeze account of current user by setting isFrozen to true
 const freezeAccount = async (req, res) => {
 	try {
 		const user = await User.findById(req.user._id);
