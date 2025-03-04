@@ -17,6 +17,7 @@ const protectRoute = async (req, res, next) => {
 		// Find the user by the id from the decoded token
 		const user = await User.findById(decoded.userId).select("-password");
 
+		// If there is no user, return an error
 		req.user = user;
 
 		next();
