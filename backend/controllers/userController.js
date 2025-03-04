@@ -304,6 +304,7 @@ const freezeAccount = async (req, res) => {
 		user.isFrozen = true;
 		await user.save();
 
+		// Return success message
 		res.status(200).json({ success: true });
 	} catch (error) {
 		res.status(500).json({ error: error.message });
