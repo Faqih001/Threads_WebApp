@@ -300,6 +300,7 @@ const freezeAccount = async (req, res) => {
 			return res.status(400).json({ error: "User not found" });
 		}
 
+		// Set isFrozen to true and save user in database
 		user.isFrozen = true;
 		await user.save();
 
