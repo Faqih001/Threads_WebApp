@@ -28,7 +28,7 @@ router.post("/create", protectRoute, createPost);
 // Delete a post route with the userId from the request user object
 router.delete("/:id", protectRoute, deletePost);
 
-
+// Like or Unlike a post route with the userId from the request user object
 router.put("/like/:id", protectRoute, likeUnlikePost);
 
 
