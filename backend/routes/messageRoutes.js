@@ -8,7 +8,7 @@ const router = express.Router();
 // Conversation Routes with the userId from the request user object
 router.get("/conversations", protectRoute, getConversations);
 
-
+// Message Routes with the userId from the request user object
 router.get("/:otherUserId", protectRoute, getMessages);
 
 
