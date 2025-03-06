@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// User Schema to store the name, username, email, password, profile picture, followers, following, bio, and isFrozen status of the user
 const userSchema = mongoose.Schema(
 	{
 		name: {
