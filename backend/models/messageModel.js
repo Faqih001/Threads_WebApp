@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Message Schema to store the conversationId, sender, text, and image of the message
 const messageSchema = new mongoose.Schema(
 	{
 		conversationId: { type: mongoose.Schema.Types.ObjectId, ref: "Conversation" },
