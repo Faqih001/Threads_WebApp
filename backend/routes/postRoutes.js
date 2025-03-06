@@ -31,7 +31,7 @@ router.delete("/:id", protectRoute, deletePost);
 // Like or Unlike a post route with the userId from the request user object
 router.put("/like/:id", protectRoute, likeUnlikePost);
 
-
+// Reply to a post route with the userId from the request user object
 router.put("/reply/:id", protectRoute, replyToPost);
 
 export default router;
