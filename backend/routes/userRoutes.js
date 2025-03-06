@@ -19,11 +19,23 @@ router.get("/profile/:query", getUserProfile);
 
 // Get the suggested users route with the userId from the request user object
 router.get("/suggested", protectRoute, getSuggestedUsers);
+
+// Signup a new user route with the userId from the request user object
 router.post("/signup", signupUser);
+
+//
 router.post("/login", loginUser);
+
+
 router.post("/logout", logoutUser);
+
+
 router.post("/follow/:id", protectRoute, followUnFollowUser); // Toggle state(follow/unfollow)
+
+
 router.put("/update/:id", protectRoute, updateUser);
+
+
 router.put("/freeze", protectRoute, freezeAccount);
 
 export default router;
