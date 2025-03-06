@@ -13,7 +13,7 @@ import protectRoute from "../middlewares/protectRoute.js";
 // Create a new router instance for the post routes
 const router = express.Router();
 
-//
+// Get the feed posts route with the userId from the request user object
 router.get("/feed", protectRoute, getFeedPosts);
 router.get("/:id", getPost);
 router.get("/user/:username", getUserPosts);
