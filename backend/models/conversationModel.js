@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Conversation Schema to store the participants of the conversation and the last message sent in the conversation
 const conversationSchema = new mongoose.Schema(
 	{
 		participants: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
