@@ -2,6 +2,7 @@ import express from "express";
 import protectRoute from "../middlewares/protectRoute.js";
 import { getMessages, sendMessage, getConversations } from "../controllers/messageController.js";
 
+// Create a new router instance
 const router = express.Router();
 
 router.get("/conversations", protectRoute, getConversations);
