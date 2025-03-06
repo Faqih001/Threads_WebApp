@@ -5,8 +5,13 @@ import { getMessages, sendMessage, getConversations } from "../controllers/messa
 // Create a new router instance
 const router = express.Router();
 
+// Conversation Routes with the userId from the request user object
 router.get("/conversations", protectRoute, getConversations);
+
+
 router.get("/:otherUserId", protectRoute, getMessages);
+
+
 router.post("/", protectRoute, sendMessage);
 
 export default router;
