@@ -10,8 +10,10 @@ import {
 } from "../controllers/postController.js";
 import protectRoute from "../middlewares/protectRoute.js";
 
+// Create a new router instance for the post routes
 const router = express.Router();
 
+//
 router.get("/feed", protectRoute, getFeedPosts);
 router.get("/:id", getPost);
 router.get("/user/:username", getUserPosts);
