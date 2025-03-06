@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// Post Schema to store the user who posted the post, the text of the post, the image of the post, the likes of the post, and the replies to the post
 const postSchema = mongoose.Schema(
 	{
 		postedBy: {
