@@ -29,10 +29,10 @@ router.post("/login", loginUser);
 // Logout a user route with the userId from the request user object
 router.post("/logout", logoutUser);
 
-
+// Follow or Unfollow a user route with the userId from the request user object
 router.post("/follow/:id", protectRoute, followUnFollowUser); // Toggle state(follow/unfollow)
 
-
+// Update a user route with the userId from the request user object
 router.put("/update/:id", protectRoute, updateUser);
 
 
