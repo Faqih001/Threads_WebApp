@@ -26,7 +26,7 @@ router.post("/signup", signupUser);
 // Login a user route with the userId from the request user object
 router.post("/login", loginUser);
 
-
+// Logout a user route with the userId from the request user object
 router.post("/logout", logoutUser);
 
 
