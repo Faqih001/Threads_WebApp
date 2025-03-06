@@ -35,7 +35,7 @@ router.post("/follow/:id", protectRoute, followUnFollowUser); // Toggle state(fo
 // Update a user route with the userId from the request user object
 router.put("/update/:id", protectRoute, updateUser);
 
-
+// Freeze an account route with the userId from the request user object
 router.put("/freeze", protectRoute, freezeAccount);
 
 export default router;
