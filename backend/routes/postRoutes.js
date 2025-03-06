@@ -19,7 +19,7 @@ router.get("/feed", protectRoute, getFeedPosts);
 // Get the post by id route with the userId from the request user object
 router.get("/:id", getPost);
 
-
+// Get the user posts by username route with the userId from the request user object
 router.get("/user/:username", getUserPosts);
 
 
