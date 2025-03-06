@@ -22,7 +22,7 @@ router.get("/:id", getPost);
 // Get the user posts by username route with the userId from the request user object
 router.get("/user/:username", getUserPosts);
 
-
+// Create a new post route with the userId from the request user object
 router.post("/create", protectRoute, createPost);
 
 
