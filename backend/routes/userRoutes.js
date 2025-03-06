@@ -16,6 +16,8 @@ const router = express.Router();
 
 // Get the user profile by username route with the userId from the request user object
 router.get("/profile/:query", getUserProfile);
+
+// Get the suggested users route with the userId from the request user object
 router.get("/suggested", protectRoute, getSuggestedUsers);
 router.post("/signup", signupUser);
 router.post("/login", loginUser);
