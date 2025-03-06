@@ -11,6 +11,7 @@ import {
 } from "../controllers/userController.js";
 import protectRoute from "../middlewares/protectRoute.js";
 
+// Create a new router instance for the user routes
 const router = express.Router();
 
 router.get("/profile/:query", getUserProfile);
