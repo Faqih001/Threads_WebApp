@@ -14,6 +14,7 @@ import protectRoute from "../middlewares/protectRoute.js";
 // Create a new router instance for the user routes
 const router = express.Router();
 
+// Get the user profile by username route with the userId from the request user object
 router.get("/profile/:query", getUserProfile);
 router.get("/suggested", protectRoute, getSuggestedUsers);
 router.post("/signup", signupUser);
