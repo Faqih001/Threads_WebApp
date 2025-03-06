@@ -11,7 +11,7 @@ router.get("/conversations", protectRoute, getConversations);
 // Message Routes with the userId from the request user object
 router.get("/:otherUserId", protectRoute, getMessages);
 
-
+// Send Message Route with the userId from the request user object
 router.post("/", protectRoute, sendMessage);
 
 export default router;
