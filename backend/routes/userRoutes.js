@@ -23,7 +23,7 @@ router.get("/suggested", protectRoute, getSuggestedUsers);
 // Signup a new user route with the userId from the request user object
 router.post("/signup", signupUser);
 
-//
+// Login a user route with the userId from the request user object
 router.post("/login", loginUser);
 
 
