@@ -15,11 +15,23 @@ const router = express.Router();
 
 // Get the feed posts route with the userId from the request user object
 router.get("/feed", protectRoute, getFeedPosts);
+
+// Get the post by id route with the userId from the request user object
 router.get("/:id", getPost);
+
+
 router.get("/user/:username", getUserPosts);
+
+
 router.post("/create", protectRoute, createPost);
+
+
 router.delete("/:id", protectRoute, deletePost);
+
+
 router.put("/like/:id", protectRoute, likeUnlikePost);
+
+
 router.put("/reply/:id", protectRoute, replyToPost);
 
 export default router;
