@@ -26,6 +26,7 @@ export const getRecipientSocketId = (recipientId) => {
 // Create a new object to store the user socket map
 const userSocketMap = {}; // userId: socketId
 
+// Listen for new connections
 io.on("connection", (socket) => {
 	console.log("user connected", socket.id);
 	const userId = socket.handshake.query.userId;
