@@ -13,6 +13,7 @@ import job from "./cron/cron.js";
 // Load environment variables from a .env file
 dotenv.config();
 
+// Connect to the MongoDB database
 connectDB();
 job.start();
 
