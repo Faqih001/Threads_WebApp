@@ -23,6 +23,7 @@ export const getRecipientSocketId = (recipientId) => {
 	return userSocketMap[recipientId];
 };
 
+// Create a new object to store the user socket map
 const userSocketMap = {}; // userId: socketId
 
 io.on("connection", (socket) => {
