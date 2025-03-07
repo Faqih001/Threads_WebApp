@@ -17,6 +17,7 @@ dotenv.config();
 connectDB();
 job.start();
 
+// Create a new Express app instance
 const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
