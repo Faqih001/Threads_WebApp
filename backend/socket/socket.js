@@ -18,6 +18,7 @@ const io = new Server(server, {
 	},
 });
 
+// Get the recipient socket id from the user id
 export const getRecipientSocketId = (recipientId) => {
 	return userSocketMap[recipientId];
 };
