@@ -1,5 +1,6 @@
 import { atom } from "recoil";
 
+// Atoms are used to store the state of the application
 export const conversationsAtom = atom({
 	key: "conversationsAtom",
 	default: [],
