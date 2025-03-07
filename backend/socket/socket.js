@@ -36,7 +36,9 @@ io.on("connection", (socket) => {
 	if (userId != "undefined") userSocketMap[userId] = socket.id;
 	io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
+	// Listen for new messages and emit the message to the recipient
 	socket.on("markMessagesAsSeen", async ({ conversationId, userId }) => {
+		// Try to update the messages as seen and emit the messagesSeen event to the recipient
 		try {
 			await Message.updateMany({ conversationId: conversationId, seen: false }, { $set: { seen: true } });
 			await Conversation.updateOne({ _id: conversationId }, { $set: { "lastMessage.seen": true } });
