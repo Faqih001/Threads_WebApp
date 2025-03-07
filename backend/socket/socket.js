@@ -6,7 +6,11 @@ import Conversation from "../models/conversationModel.js";
 
 // Create a new Express app and HTTP server
 const app = express();
+
+// Create a new HTTP server with the Express app
 const server = http.createServer(app);
+
+// Create a new Socket.IO server with the HTTP server
 const io = new Server(server, {
 	cors: {
 		origin: "http://localhost:3000",
