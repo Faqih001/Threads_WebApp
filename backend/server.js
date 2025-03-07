@@ -10,6 +10,7 @@ import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
 import job from "./cron/cron.js";
 
+// Load environment variables from a .env file
 dotenv.config();
 
 connectDB();
