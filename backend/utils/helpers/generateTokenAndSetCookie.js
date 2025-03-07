@@ -7,7 +7,7 @@ const generateTokenAndSetCookie = (userId, res) => {
 		expiresIn: "15d",
 	});
 
-	//
+	// Set the JWT token in a cookie with the HttpOnly flag, max age, and same site attribute
 	res.cookie("jwt", token, {
 		httpOnly: true, // more secure
 		maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
