@@ -28,9 +28,11 @@ const userSocketMap = {}; // userId: socketId
 
 // Listen for new connections
 io.on("connection", (socket) => {
+	// Get the user id from the query parameters of the socket connection
 	console.log("user connected", socket.id);
 	const userId = socket.handshake.query.userId;
 
+	// 
 	if (userId != "undefined") userSocketMap[userId] = socket.id;
 	io.emit("getOnlineUsers", Object.keys(userSocketMap));
 
