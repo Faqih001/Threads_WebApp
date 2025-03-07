@@ -6,6 +6,7 @@ export const conversationsAtom = atom({
 	default: [],
 });
 
+// Atoms are used to store the state of the application 
 export const selectedConversationAtom = atom({
 	key: "selectedConversationAtom",
 	default: {
