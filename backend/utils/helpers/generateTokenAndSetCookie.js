@@ -14,6 +14,7 @@ const generateTokenAndSetCookie = (userId, res) => {
 		sameSite: "strict", // CSRF
 	});
 
+	// Return the JWT token
 	return token;
 };
 
